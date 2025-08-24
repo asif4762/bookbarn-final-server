@@ -6,7 +6,8 @@ const port = process.env.PORT || 8159;
 const SSLCommerzPayment = require("sslcommerz-lts");
 
 app.use(cors({
-  origin: "*"  // or specify Netlify domain: "https://your-site.netlify.app"
+  origin: "*",
+  credentials: true  // or specify Netlify domain: "https://your-site.netlify.app"
 }));
 app.use(express.json());
 
