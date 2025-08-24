@@ -5,7 +5,9 @@ require("dotenv").config();
 const port = process.env.PORT || 8159;
 const SSLCommerzPayment = require("sslcommerz-lts");
 
-app.use(cors());
+app.use(cors({
+  origin: "*"  // or specify Netlify domain: "https://your-site.netlify.app"
+}));
 app.use(express.json());
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
